@@ -1,4 +1,7 @@
 import os
+from dotenv import load_dotenv
+load_dotenv()
+
 from flask import json
 from openai import OpenAI
 
@@ -7,7 +10,7 @@ client = OpenAI(
     base_url=os.getenv("OPENAI_API_BASE_URL", "https://api.openai.com/v1")
 )
 
-model = "openai/gpt-4.1-mini"
+model = "gpt-4.1-mini"
 messages = [
     {"role": "system", 
      "content": "You are a helpful assistant. Be concise. Use your tools when you need real data."}

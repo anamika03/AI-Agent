@@ -1,5 +1,9 @@
 import os
+from dotenv import load_dotenv
 from openai import OpenAI
+
+load_dotenv()
+
 
 client = OpenAI(
     api_key=os.getenv("OPENAI_API_KEY"),
@@ -18,7 +22,7 @@ messages.append({
 
 while True:
     response = client.chat.completions.create(
-        model="openai/gpt-4.1-mini",
+        model="gpt-4.1-mini",
         messages=messages
     )
     if response.choices[0].finish_reason == "stop":
