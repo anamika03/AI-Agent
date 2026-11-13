@@ -2,17 +2,20 @@
 # pip install --upgrade pip
 
 # TASK:Experiment with Temperature parameter in OpenAI API
-
+import os
+from dotenv import load_dotenv
 from openai import OpenAI
 
+load_dotenv()
+
 client = OpenAI(
-    api_key="YOUR_API_KEY"
-    )
+    api_key=os.getenv("OPENAI_API_KEY")
+)
 
 
 response = client.chat.completions.create(
-    model="gemini-1.5-flash",
-    temperature=0.0,
+    model="gpt-4.1-mini",
+    temperature=0.7,
     messages=[
         {"role": "system", "content": "You are a helpful assistant. Be concise."},
         {"role": "user", "content": "Write a one-sentence story about a robot?"}
