@@ -63,4 +63,24 @@ while True:
                 "tool_call_id": tc.id,
                 "content": result
             })
-            
+
+questions = [
+    "What's on my calander today?",
+    "tell me about the standup.",
+    "What time is my dentist?",
+    "Am I free at 6pm?",
+    "Summarise my day."
+]
+
+for que in questions:
+    messages.append({"role": "user", "content": que})
+    # answer = run_agent(messages)
+    print(f"Messages in history: {len(messages)}")
+    if response.choices[0].finish_reason == "stop":
+                reply = response.choices[0].message.content
+                print(f"Q: {que}")
+                print(f"A: {reply}\n")
+                messages.append({"role": "assistant",
+                                 "content": reply})
+                break
+ 
