@@ -19,11 +19,11 @@ messages = [
 SYSTEM_PROMPT = "You are a helpful personal assistant. Use your tools when you need real data."
 
 questions = [
-    "What's on my calander today?",
+    "What's on my calander tommorow?",
     "tell me about the standup.",
     "What time is my dentist?",
-    "Am I free at 6pm?",
-    "Summarise my day."
+    "Am I free at 4pm?",
+    "Tell me a joke"
 ]
 
 for que in questions:
